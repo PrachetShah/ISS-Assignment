@@ -43,7 +43,7 @@ public class CalculatorInheritance extends Basic{
 	
 	// utilization of super keyword, super cannot be used with static methods
 	public void anyMethod() {
-		CalculatorInheritance calci = new CalculatorInheritance();
+		CalculatorInheritance calci = new CalculatorInheritance(10);
 		
 		// invoking subclass method
 		calci.display();
@@ -53,7 +53,7 @@ public class CalculatorInheritance extends Basic{
 	}
 	
 	public static void main(String args[]) {
-		CalculatorInheritance calci = new CalculatorInheritance();
+		CalculatorInheritance calci = new CalculatorInheritance(5);
 		calci.addition(5, 3);
 		calci.multiply(5, 3);
 		calci.anyMethod();
