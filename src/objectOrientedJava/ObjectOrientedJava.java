@@ -9,7 +9,7 @@
 
 package objectOrientedJava;
 
-import java.util.Scanner;
+//import java.util.Scanner;
 
 class Student{
 	// instance variable
