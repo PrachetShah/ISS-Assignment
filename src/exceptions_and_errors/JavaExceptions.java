@@ -4,9 +4,27 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class JavaExceptions {
+	/*
+	 * Throws vs Throw Keywords
+	 * Try to understand the difference between throws and throw keywords, 
+	 * throws is used to postpone the handling of a checked exception and 
+	 * throw is used to invoke an exception explicitly.
+	 */
+	class InsufficientFundsException extends Exception{}
+	class NewException extends Exception{}
+//	class RemoteException extends Exception{}
+	public double deposit(double amount) throws InsufficientFundsException, NewException{
+		if(amount > 1000) {
+			throw new InsufficientFundsException();
+		}else if(amount == 0){
+			throw new NewException();
+		}else {
+			return amount;
+		}
+	}
+	
 	/*
 	 *  Exception Heirarchy present under java.lang.Object.Throwable
 	 *  All exception classes are subtypes of the java.lang.Exception class. 
@@ -52,12 +70,18 @@ public class JavaExceptions {
 			System.out.println("Out of Block\n");
 		}
 		
-		/*
-		 * Throws vs Throw Keywords
-		 * Try to understand the difference between throws and throw keywords, 
-		 * throws is used to postpone the handling of a checked exception and 
-		 * throw is used to invoke an exception explicitly.
-		 */
+		// throwing custom exception
+		JavaExceptions j = new JavaExceptions();
+		try {
+			j.deposit(1500);
+			j.deposit(0);
+		}catch(InsufficientFundsException i) {
+			System.out.println(i);
+		}catch(Exception r) {
+			System.out.println(r);
+		}finally {
+			System.out.println("Completed");
+		}
 
 	}
 
