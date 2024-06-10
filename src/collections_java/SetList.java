@@ -2,6 +2,7 @@ package collections_java;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Iterator;
 import java.util.TreeSet;
 
 public class SetList {
@@ -48,6 +49,18 @@ public class SetList {
         students.add(new Student("John", 12));
         
         System.out.println(students);
+        
+        // Looping Set with for loop
+        for(Student st: students) {
+        	System.out.println("Name:"+st.getName()+"\tAge:"+st.getAge());
+        }
+        
+        // Looping Set with Iterator
+        Iterator<Student> i = students.iterator();
+        while(i.hasNext()){
+        	Object entry = i.next();
+        	System.out.println(entry);
+        }
 	}
 
 }

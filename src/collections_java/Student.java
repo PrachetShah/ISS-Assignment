@@ -8,7 +8,7 @@ import java.util.Comparator;
 
 //creating a custom comparator
 class AgeComparator implements Comparator<Student>{
-	// sorting based on ascending age
+	// sorting based on ascending age, for descending add (-) to the comparison
 	public int compare(Student c1, Student c2){
 		return c1.getAge() - c2.getAge();
 	}
