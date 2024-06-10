@@ -5,6 +5,17 @@ import java.util.Comparator;
 // custom data type for collection data structures
 
 // for more comparator: https://www.geeksforgeeks.org/comparator-interface-java/
+/*
+ *  Comparable vs Comparator: https://www.geeksforgeeks.org/comparable-vs-comparator-in-java/
+ *  A comparable object is capable of comparing itself with another object. 
+ *  The class itself must implements the java.lang.Comparable interface to compare its instances. 
+ *  Uses compareTo() in class itself
+ *  
+ *  Unlike Comparable, Comparator is external to the element type we are comparing. 
+ *  It’s a separate class. We create multiple separate classes (that implement Comparator) 
+ *  to compare by different members.Collections class has a second sort() method and it takes Comparator.
+ *  Uses compare() and needs a new class
+ */
 
 //creating a custom comparator
 class AgeComparator implements Comparator<Student>{
