@@ -1,0 +1,27 @@
+JSON and XML are human readable formats and are language independent. They both have support for creation, reading and decoding in real world situations. We can compare JSON with XML, based on the following factors −
+
+Verbose
+XML is more verbose than JSON, so it is faster to write JSON for programmers.
+
+Arrays Usage
+XML is used to describe the structured data, which doesn't include arrays whereas JSON include arrays.
+
+Parsing
+JavaScript's eval method parses JSON. When applied to JSON, eval returns the described object.
+
+Example
+Individual examples of XML and JSON −
+
+JSON:
+{
+   "company": Volkswagen,
+   "name": "Vento",
+   "price": 800000
+}
+
+XML:
+<car>
+   <company>Volkswagen</company>
+   <name>Vento</name>
+   <price>800000</price>
+</car>
