@@ -17,6 +17,7 @@ public class JDBC_Txt_Img_Store_in_DB {
 		
 		// create a table for storing images as blobs and text as clobs
 		Statement stmt = con.createStatement();
+		
 		// not needed once table is created
 //		stmt.execute("CREATE TABLE JDBC_BLOB_CLOB (plain_text longtext, name varchar (255), image longblob)");
 		
