@@ -16,13 +16,22 @@ import java.util.Arrays;
 import java.util.List;
 
 /*
- * We can create files in Java in multiple ways:
+ * We can create and write files in Java in multiple ways:
  * 1. Using FileOutputStream() constructor
  * 2. Using File.createNewFile() method
  * 3. Using Files.write() method
+ * 
+ * We can read them using
+ * 1. FileInputStream()
+ * 2. FileReader.read()
+ * 3. Files.readAllLines()
+ * 
+ * To delete file, we directly use file.delete() on object of File Class
+ * 
+ * We can use .list() to list all files and dirs, and .listFiles() to list all files
  */
 
-public class CreatingFiles {
+public class FileOperations {
 
 	public static void main(String[] args) {
 		/*
@@ -45,6 +54,8 @@ public class CreatingFiles {
 			
 			// reading file
 			InputStream is = new FileInputStream("file_read_write\\test1.txt");
+			// we can use .isavailable() to get size to read in loop, or use while loop with ((c=in.read())!=1) 
+			// used in second method
 			int size = is.available();
 
 			for(int i = 0; i < size; i++) {
@@ -106,6 +117,45 @@ public class CreatingFiles {
 			System.out.println("Exception");
 		}
 		
+		// to delete a file, we use .delete() method
+		String arr[] = {"test1.txt", "test2.txt", "test3.txt"};
+		File x;
+		System.out.println("\n-----------------------------------------------------");
+		for(String file: arr) {
+			x = new File("file_read_write//"+file);
+			if(x.exists()) {
+				boolean success = x.delete();
+				
+				if(success) {
+					System.out.println("File Deleted Successfully: "+file);
+				}else {
+					System.out.println("File Deletion Failed");
+				}
+			}else {
+				System.out.println("File does not exist: "+ file);
+			}
+		}
+		
+		// delete all files from directory
+		System.out.println("---------------------------------------");
+		File path = new File("Concepts");
+		System.out.println("Checking Directory: Concepts:");
+		deleteFiles(path);
+		
+	}
+	
+	public static void deleteFiles(File dirPath) {
+		// we can use .list() to list all files and dirs, and .listFiles() to list all files
+		File filesList[] = dirPath.listFiles();
+		for(File file: filesList) {
+			System.out.println(file.getName());
+			if(file.isFile()) {
+				// use file.delete() to delete
+			}else {
+				// to reiterate in directory
+				 deleteFiles(file);
+			}
+		}
 	}
 
 }
