@@ -3,12 +3,15 @@ package jdbc_tutorial;
 import java.sql.*;
 import java.io.*;
 
+// we can use batch processing as well to reduce communication overhead by batching statements
+
 public class JDBC_Txt_Img_Store_in_DB {
 	
 	static final String DB_URL = "jdbc:mysql://localhost:3306/ASSIGNMENT";
 	static final String USER = "prachet";
 	static final String PASS = "root";
-
+	
+	// Statement block always need an exception handler, hence we capture it while defining method 
 	public static void main(String args[]) throws Exception {
 
 		//Getting the connection
