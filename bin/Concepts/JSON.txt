@@ -1,0 +1,38 @@
+JSON stands for Javascript-Object Notation
+
+The filename extension is .json.
+
+JSON Internet Media type is application/json.
+
+JSON format is used for serializing and transmitting structured data over network connection.
+
+It is primarily used to transmit data between a server and web applications.
+
+Web services and APIs use JSON format to provide public data.
+
+JSON Syntax:
+JSON syntax is basically considered as a subset of JavaScript syntax; it includes the following −
+1. Data is represented in name/value pairs.
+2. Curly braces hold objects and each name is followed by ':'(colon), the name/value pairs are separated by , (comma).
+3. Square brackets hold arrays and values are separated by ,(comma).
+
+
+Example of JSON Structure:
+{
+   "book": [
+	
+      {
+         "id":"01",
+         "language": "Java",
+         "edition": "third",
+         "author": "Herbert Schildt"
+      },
+	
+      {
+         "id":"07",
+         "language": "C++",
+         "edition": "second",
+         "author": "E.Balagurusamy"
+      }
+   ]
+}
