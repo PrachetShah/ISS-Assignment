@@ -61,6 +61,27 @@ public class SetList {
         	Object entry = i.next();
         	System.out.println(entry);
         }
+
+		// using custom object with Student Comparator which compares name anda age
+        Set<Student> studentNew = new TreeSet<Student> (new StudentComparator());
+        studentNew.add(new Student("John", 17));
+        studentNew.add(new Student("Prachet", 21));
+        studentNew.add(new Student("Prachet", 111));
+        studentNew.add(new Student("John", 12));
+        
+        System.out.println(studentNew);
+        
+        // Looping Set with for loop
+        for(Student st: studentNew) {
+        	System.out.println("Name:"+st.getName()+"\tAge:"+st.getAge());
+        }
+        
+        // Looping Set with Iterator
+        Iterator<Student> iter = studentNew.iterator();
+        while(iter.hasNext()){
+        	Object entry = iter.next();
+        	System.out.println(entry);
+        }
 	}
 
 }

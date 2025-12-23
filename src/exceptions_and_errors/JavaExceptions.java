@@ -1,8 +1,6 @@
 package exceptions_and_errors;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class JavaExceptions {
@@ -39,6 +37,7 @@ public class JavaExceptions {
 
 			File file = new File("file.txt");
 			FileReader fr = new FileReader(file);
+			fr.close();
 		}catch(Exception e) {
 			System.out.println("Compile-time Exception Found: "+ e);
 		}
@@ -48,7 +47,9 @@ public class JavaExceptions {
 		try {
 
 			int arr[] = {1,2,3,4,5};
-			int val = arr[6];
+			for(int i=0; i<arr.length; i++) {
+				System.out.println(arr[i]);
+			}
 		}catch(ArrayIndexOutOfBoundsException e) {
 			System.out.println("Run-time Exception Thrown: " + e);
 		}finally {
@@ -62,6 +63,7 @@ public class JavaExceptions {
 			int arr[] = {1,2,3,4,5};
 			//	int res = arr[7];
 			int val = arr[0]/0;
+			System.out.println(val);
 		}catch (ArrayIndexOutOfBoundsException f){
 			f.printStackTrace();
 		}catch(ArithmeticException e) {

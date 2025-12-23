@@ -8,11 +8,12 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.nio.file.StandardOpenOption;
+// import java.nio.charset.StandardCharsets;
+// import java.nio.file.Files;
+// import java.nio.file.Paths;
+// import java.nio.file.StandardOpenOption;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -103,9 +104,10 @@ public class FileOperations {
 		 * does not run, try to avoid
 		 */
 		try {
-			String data = "test data 3";
+			// String data = "test data 3";
 //			Files.write(Paths.get("file_read_write//test3.txt"), data.getBytes());
 			List<String> lines = Arrays.asList("1 line", "2 line");
+			Collections.sort(lines);
 //			Files.write(Paths.get("file_read_write//test3.txt"), lines, 
 //				StandardCharsets.UTF_8, 
 //				StandardOpenOption.CREATE, 

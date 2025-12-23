@@ -32,11 +32,19 @@ class NameComparator implements Comparator<Student>{
 	}
 }
 
+class StudentComparator implements Comparator<Student> {
+	public int compare(Student c1, Student c2){
+		int nameCompare = c1.getName().compareTo(c2.getName());
+		int ageCommpare = c1.getAge().compareTo(c2.getAge());
+		return (nameCompare==0) ? ageCommpare : nameCompare;
+	}
+}
+
 public class Student{
 	String name;
-	int age;
+	Integer age;
 
-	Student(String name, int age){
+	Student(String name, Integer age){
 		this.name = name;
 		this.age = age;
 	}
@@ -54,11 +62,11 @@ public class Student{
 		this.name = name;
 	}
 
-	public int getAge() {
+	public Integer getAge() {
 		return age;
 	}
 
-	public void setAge(int age) {
+	public void setAge(Integer age) {
 		this.age = age;
 	}
 }

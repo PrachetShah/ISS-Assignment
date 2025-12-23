@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class IntroductionJava {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		System.out.println("Hello World - Prachet");
 		
 		// Take input in Java and print
@@ -14,6 +13,7 @@ public class IntroductionJava {
 		while(s.hasNext()) {
 			System.out.println(s.next());
 		}
+		s.close();
 	}
 
 }

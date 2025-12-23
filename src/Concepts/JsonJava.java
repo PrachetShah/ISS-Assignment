@@ -1,9 +1,6 @@
 package Concepts;
 
 import org.json.simple.JSONObject;
-import java.lang.Integer;
-import java.lang.Double;
-import java.lang.Boolean;
 
 public class JsonJava {
 
